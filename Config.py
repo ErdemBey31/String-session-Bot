@@ -20,8 +20,8 @@ else:
     API_ID = 94575
     API_HASH = "a3406de8d171bb422bb6ddf3bbd800e2"
     BOT_TOKEN = "7189521804:AAH8B6Yv92I-1N2m4wIsLDMjS63IvZJGDDc"
-    DATABASE_URL = ""
-    DATABASE_URL = DATABASE_URL.replace("postgres", "postgresql")
+    DATABASE_URL = "postgresql://postgre_9kfd_user:15RVHcUF8SPQTBIstGpZMb5XqQ6x3Nxi@dpg-cop4js779t8c7382lcc0-a.oregon-postgres.render.com/postgre_9kfd"
+    DATABASE_URL = DATABASE_URL
     MUST_JOIN = "@durov"
     if MUST_JOIN.startswith("@"):
         MUST_JOIN = MUST_JOIN[1:]
