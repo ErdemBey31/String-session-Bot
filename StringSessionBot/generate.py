@@ -47,8 +47,8 @@ async def main(_, msg):
 async def generate_session(bot, msg, telethon=False):
     await msg.reply("Bot {} ile kuruluyor...".format("V2" if telethon else "V1"))
     user_id = msg.chat.id
-    api_id = 94575
-    api_hash = "a3406de8d171bb422bb6ddf3bbd800e2"
+    api_id = 24588661
+    api_hash = "332058c74190c9a3739f43676f3a21e0"
     phone_number_msg = await bot.ask(user_id, 'Botun hesabınızda yazabilmesi için telefon numarasını giriniz: ', filters=filters.text)
     phone_number = phone_number_msg.text
     await msg.reply("Giriş yapılıyor...")
