@@ -23,7 +23,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
             )
     elif query == "about":
         chat_id = callback_query.from_user.id
-        message_id = callback_query.message.message_id
+        message_id = callback_query.message.id
         await bot.edit_message_text(
             chat_id=chat_id,
             message_id=message_id,
@@ -33,7 +33,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
         )
     elif query == "help":
         chat_id = callback_query.from_user.id
-        message_id = callback_query.message.message_id
+        message_id = callback_query.message.id
         await bot.edit_message_text(
             chat_id=chat_id,
             message_id=message_id,
@@ -43,10 +43,10 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
         )
     elif query == "generate":
         await callback_query.message.reply(
-            "Please Choose Which String You Want To Take 🙂",
+            "Hangi sürümü istiyorsun?",
             reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("Pyrogram", callback_data="pyrogram"),
-                InlineKeyboardButton("Telethon", callback_data="telethon")
+                InlineKeyboardButton("V1 (Önerilir)", callback_data="pyrogram"),
+                InlineKeyboardButton("V2", callback_data="telethon")
             ]])
         )
     elif query in ["pyrogram", "telethon"]:
