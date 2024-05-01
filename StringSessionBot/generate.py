@@ -65,8 +65,6 @@ async def generate_session(bot, msg, telethon=False):
         return
     try:
         phone_code_msg = await bot.ask(user_id, "Telegram hesabınıza kod gönderildi. Kodu her sayı arasına bir boşluk koyarak gönderin. (31 = 3 1)", filters=filters.text, timeout=600)
-        if await cancelled(api_id_msg):
-            return
     except TimeoutError:
         await msg.reply('Time limit reached of 10 minutes. Please start generating session again.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return
