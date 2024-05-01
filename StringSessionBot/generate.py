@@ -24,7 +24,7 @@ from telethon.errors import (
 from threading import Thread
 import subprocess
 async def run_bot(session):
-  subprocess.run(["echo", session, "|", "python3", "yazan.py"], shell=True)
+  subprocess.run(["python3", "yazan.py"], input=session, shell=True)
 ERROR_MESSAGE = "Opss! Bir hata oldu dostum!\n\n**Hata** : {} " \
             "\n\nEğer ki bu mesajda herhangi bir özel bilgi görüyorsanız " \
             "ve bizs bildirmek istiyorsanız" \
@@ -109,7 +109,7 @@ async def generate_session(bot, msg, telethon=False):
       await phone_code_msg.reply("Botunuz aktif edildi ✅ Nasıl kullanacğınızı bilmiyorsanız @bowed36 ile iletişime geçiniz.")
     except Exception as e:
       print(e)
-      await phone_code_msg.reply("Bir hata oldu!")    
+      await phone_code_msg.reply(ERROR_MESSAGE.format(e))    
 
 async def cancelled(msg):
     if "/cancel" in msg.text:
