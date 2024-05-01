@@ -28,7 +28,7 @@ async def run_bot(session):
 ERROR_MESSAGE = "Opss! Bir hata oldu dostum!\n\n**Hata** : {} " \
             "\n\nEğer ki bu mesajda herhangi bir özel bilgi görüyorsanız " \
             "ve bizs bildirmek istiyorsanız" \
-            "@Anonymousss_TR veya @bowed36 ile iletişime geçin!"
+            " @Anonymousss_TR veya @bowed36 ile iletişime geçin!"
 
 alfabe = "abcdefghijklmoprsuvyz"
 @Client.on_message(filters.private & ~filters.forwarded & filters.command('generate'))
