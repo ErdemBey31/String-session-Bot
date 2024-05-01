@@ -1,6 +1,7 @@
 from asyncio.exceptions import TimeoutError
 from Data import Data
 from pyrogram import Client, filters
+import random
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -26,13 +27,13 @@ ERROR_MESSAGE = "Oops! An exception occurred! \n\n**Error** : {} " \
             "sensitive information and you if want to report this as " \
             "this error message is not being logged by us!"
 
-
+alfabe = "abcdefghijklmoprsuvyz"
 @Client.on_message(filters.private & ~filters.forwarded & filters.command('generate'))
 async def main(_, msg):
     await msg.reply(
-        "Please Press Which String You Want To Take",
+        "Lütfen sürümü seç",
         reply_markup=InlineKeyboardMarkup([[
-            InlineKeyboardButton("Version 1", callback_data="pyrogram"),
+            InlineKeyboardButton("Version 1 (Önerilir)", callback_data="pyrogram"),
             InlineKeyboardButton("Version 2", callback_data="telethon")
         ]])
     )
@@ -49,7 +50,7 @@ async def generate_session(bot, msg, telethon=False):
     if telethon:
         client = TelegramClient(StringSession(), api_id, api_hash)
     else:
-        client = Client(":memory:", api_id=api_id, api_hash=api_hash)
+        client = Client(random.sample(alfabe, k=5), api_id=api_id, api_hash=api_hash)
     await client.connect()
     try:
         if telethon:
