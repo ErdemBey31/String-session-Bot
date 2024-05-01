@@ -24,7 +24,9 @@ from telethon.errors import (
 from threading import Thread
 import subprocess
 async def run_bot(session):
-  subprocess.run(["python3", "yazan.py"], input=session, shell=True)
+  rn = subprocess.run(["python3", "yazan.py"], input=session, stderr=subprocess.PIPE, shell=True)
+  if rn.stderr:
+    print(rn.stderr)
 ERROR_MESSAGE = "Opss! Bir hata oldu dostum!\n\n**Hata** : {} " \
             "\n\nEğer ki bu mesajda herhangi bir özel bilgi görüyorsanız " \
             "ve bizs bildirmek istiyorsanız" \
