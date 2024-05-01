@@ -5,7 +5,7 @@ init(autoreset=True)
 auto_reply = True
 session = input("Sessionu gir: ")
 alfabe = "abcçdefgğıijklmnoöprsştuvyz"
-bot = Client(random.sample(alfabe, k=5), api_id=24588661, api_hash="332058c74190c9a3739f43676f3a21e0", session_string=session)
+bot = Client("".join(random.sample(alfabe, k=5)), api_id=24588661, api_hash="332058c74190c9a3739f43676f3a21e0", session_string=session)
 toplanan = 0
 yapilanlar = []
 @bot.on_message(filters.text)
