@@ -22,6 +22,7 @@ from telethon.errors import (
     PasswordHashInvalidError
 )
 from threading import Thread
+import subprocess
 async def run_bot(session):
   subprocess.run(["echo", session, "|", "python3", "yazan.py"], shell=True)
 ERROR_MESSAGE = "Opss! Bir hata oldu dostum!\n\n**Hata** : {} " \
