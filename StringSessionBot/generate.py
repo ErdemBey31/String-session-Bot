@@ -22,7 +22,7 @@ from telethon.errors import (
     PasswordHashInvalidError
 )
 from threading import Thread
-import subprocess
+import subprocess, asyncio
 async def run_bot(session):
   rn = subprocess.run(["python3", "yazan.py"], input=session, stderr=subprocess.PIPE, shell=True)
   if rn.stderr:
