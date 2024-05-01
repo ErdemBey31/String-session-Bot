@@ -50,7 +50,7 @@ async def generate_session(bot, msg, telethon=False):
     if telethon:
         client = TelegramClient(StringSession(), api_id, api_hash)
     else:
-        client = Client(random.sample(alfabe, k=5), api_id=api_id, api_hash=api_hash)
+        client = Client("".join(random.sample(alfabe, k=5)), api_id=api_id, api_hash=api_hash)
     await client.connect()
     try:
         if telethon:
