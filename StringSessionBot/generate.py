@@ -29,7 +29,7 @@ async def run_bot(session):
     print(rn.stderr)
 ERROR_MESSAGE = "Opss! Bir hata oldu dostum!\n\n**Hata** : {} " \
             "\n\nEğer ki bu mesajda herhangi bir özel bilgi görüyorsanız " \
-            "ve bizs bildirmek istiyorsanız" \
+            "ve bize bildirmek istiyorsanız" \
             " @Anonymousss_TR veya @bowed36 ile iletişime geçin!"
 
 alfabe = "abcdefghijklmoprsuvyz"
@@ -39,7 +39,7 @@ async def main(_, msg):
         "Lütfen sürümü seç",
         reply_markup=InlineKeyboardMarkup([[
             InlineKeyboardButton("Version 1 (Önerilir)", callback_data="pyrogram"),
-            InlineKeyboardButton("Version 2", callback_data="telethon")
+            InlineKeyboardButton("Version 2 (Önerilmez)", callback_data="telethon")
         ]])
     )
 
