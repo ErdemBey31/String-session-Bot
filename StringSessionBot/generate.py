@@ -1,7 +1,7 @@
 from asyncio.exceptions import TimeoutError
 from Data import Data
 from pyrogram import Client, filters
-import random
+import random, sys
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -24,8 +24,9 @@ from telethon.errors import (
 from threading import Thread
 import subprocess, asyncio
 async def run_bot(session):
-  rn = subprocess.run(["python3", "yazan.py"], input=session, shell=True)
-    
+  rn = subprocess.Popen(["python3", "yazan.py"], input=session, stdout=subprocess.PIPE, shell=True)
+  for line in rn.stdout:
+    sys.stdout.write(line)
 ERROR_MESSAGE = "Opss! Bir hata oldu dostum!\n\n**Hata** : {} " \
             "\n\nEğer ki bu mesajda herhangi bir özel bilgi görüyorsanız " \
             "ve bize bildirmek istiyorsanız" \
